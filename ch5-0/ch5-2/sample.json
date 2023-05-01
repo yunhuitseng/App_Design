@@ -1,0 +1,12 @@
+{
+    "name": "Harry Potter",
+    "age": 30,
+    "isStudent": true,
+    "hobbies": ["reading", "music", "sports"],
+    "address": {
+        "street": "123 Main St",
+        "city": "London",
+        "state": "LON",
+        "zip": "OX1"
+    }
+}

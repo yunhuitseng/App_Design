@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 
-class MainActivity2 : AppCompatActivity() {
+class  MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
@@ -20,28 +20,32 @@ class MainActivity2 : AppCompatActivity() {
         val Text4 =findViewById<EditText>(R.id.editTextTextPersonName4)
 
 
-            //按下才發送到第一頁
-            val button = findViewById<Button>(R.id.button2)
-            button.setOnClickListener{
-                var bundle = Bundle()
+        //按下才發送到第一頁
+        val button = findViewById<Button>(R.id.button2)
+        button.setOnClickListener{
 
-                intent?.extras?.let {
-                    //接收數值
-                    val value1 = it.getString("Key1")
-                    val value2 = it.getString("Key2")
-                    bundle.putString("Key1", value1)
-                    bundle.putString("Key2", value2)
-                }
+            //Bundle傳送多個數值
+            var bundle = Bundle()
 
-
-
-                bundle.putString("Key3", Text3.text.toString())
-                bundle.putString("key4", Text4.text.toString())
-
-                val intent = Intent(this,MainActivity::class.java)
-                intent.putExtras(bundle)
-                startActivityForResult(intent,1)
+            intent?.extras?.let {
+                //接收數值
+                val value1 = it.getString("Key1")
+                val value2 = it.getString("Key2")
+                bundle.putString("Key1", value1)
+                bundle.putString("Key2", value2)
             }
+
+
+
+            bundle.putString("Key3", Text3.text.toString())
+            bundle.putString("key4", Text4.text.toString())
+            //intent 切換 activity
+            val intent = Intent(this,MainActivity::class.java)
+
+            //藉由putExtras()傳送打包好的bundle資料
+            intent.putExtras(bundle)
+            startActivityForResult(intent,1)
+        }
 
 
 
