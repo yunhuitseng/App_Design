@@ -18,11 +18,10 @@ class MainActivity : AppCompatActivity() {
         //使用OkHttp進行調用
         //Get的方式
         val client = OkHttpClient()
-        //val urlBuilder = "https://juniel.lionfree.net/public_html/app/read.php".toHttpUrlOrNull()
-        val urlBuilder = "http://10.0.2.2/app/read.php".toHttpUrlOrNull()
+        val urlBuilder = "https://purechat.lionfree.net/app/read.php".toHttpUrlOrNull()
             ?.newBuilder()
             ?.addQueryParameter("account", "student_1")
-            ?.addQueryParameter("limit", "2")
+            ?.addQueryParameter("limit", "5")
         val url = urlBuilder?.build().toString()
         val request = Request.Builder()
             .url(url)
@@ -32,11 +31,8 @@ class MainActivity : AppCompatActivity() {
                 e.printStackTrace()
             }
             override fun onResponse(call: Call, response: Response) {
-                println("123")
                 if (response.isSuccessful) {
-                    println("456")
                     val responseBody = response.body?.string()
-
                     println("-----${responseBody}")
 
                     val jsonObject = JSONObject(responseBody)
@@ -57,7 +53,6 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    println("789")
                     println("Request failed")
                     runOnUiThread {
                         //直接將內容回傳給id名稱為TextView
@@ -65,7 +60,6 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 }
-                println("000")
             }
         })
 
@@ -86,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                 .add("content", "${postContent}")
                 .build()
             val requestPost = Request.Builder()
-                .url("http://10.0.2.2/app/insert.php")
+                .url("https://purechat.lionfree.net/app/insert.php")
                 .post(requestBody)
                 .build()
 
@@ -106,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         val timerTask = object : TimerTask() {
             override fun run() {
                 val client = OkHttpClient()
-                val urlBuilder = "https://10.0.2.2/app/read.php?".toHttpUrlOrNull()
+                val urlBuilder = "https://purechat.lionfree.net/app/read.php?".toHttpUrlOrNull()
                     ?.newBuilder()
                     ?.addQueryParameter("account", "student_1")
                     ?.addQueryParameter("limit", "2")

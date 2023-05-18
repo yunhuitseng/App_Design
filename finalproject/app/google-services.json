@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "700053892329",
+    "project_id": "photoclassification-7aeba",
+    "storage_bucket": "photoclassification-7aeba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700053892329:android:f4915c27dea12946af9478",
+        "android_client_info": {
+          "package_name": "com.example.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700053892329-e9oq8k2b1ebj2tai3mc6lqif74op2s57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq1KDDtDk5ZNnfJmlf5oXcMAiUwDDnzKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700053892329-e9oq8k2b1ebj2tai3mc6lqif74op2s57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
