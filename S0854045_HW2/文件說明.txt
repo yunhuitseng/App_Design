@@ -1,0 +1,5 @@
+app
+-images //存圖片
+-read.php //get程式
+-insert.php//post程式
+HW2 //android studio專案名稱
